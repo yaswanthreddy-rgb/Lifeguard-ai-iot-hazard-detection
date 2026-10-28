@@ -1,0 +1,6 @@
+lifeguard-ai-web/lifeguard-frontend/node_modules/
+lifeguard-ai-web/lifeguard-frontend/dist/
+lifeguard-ai-web/lifeguard-backend/target/
+lifeguard-ai-web/lifeguard-backend/data/
+.idea/
+*.iml

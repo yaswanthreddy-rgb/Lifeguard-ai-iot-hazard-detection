@@ -1,0 +1,319 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run LifeGuard frontend",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"cd /d C:\\Users\\yaswa\\Downloads\\lifeguard-ai-website\\lifeguard-ai-web\\lifeguard-frontend && npm run dev"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run LifeGuard backend",
+			"type": "shell",
+			"command": "mvn",
+			"args": [
+				"-f",
+				"lifeguard-ai-web\\lifeguard-backend\\pom.xml",
+				"spring-boot:run"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install LifeGuard frontend dependencies",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"lifeguard-ai-web\\lifeguard-frontend",
+				"install"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Start LifeGuard frontend persistent",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"cd /d C:\\Users\\yaswa\\Downloads\\lifeguard-ai-website\\lifeguard-ai-web\\lifeguard-frontend && npm run dev -- --host 0.0.0.0"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build LifeGuard frontend",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"lifeguard-ai-web\\lifeguard-frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Rebuild LifeGuard frontend after fix",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"lifeguard-ai-web\\lifeguard-frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build LifeGuard backend notifications",
+			"type": "shell",
+			"command": "mvn",
+			"args": [
+				"-f",
+				"lifeguard-ai-web\\lifeguard-backend\\pom.xml",
+				"-DskipTests",
+				"package"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Twilio API",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"for %f in (\"%USERPROFILE%\\.m2\\repository\\com\\twilio\\sdk\\twilio\\10.6.1\\twilio-10.6.1.jar\") do javap -classpath %f com.twilio.type.Twiml"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Rebuild LifeGuard backend notifications",
+			"type": "shell",
+			"command": "mvn",
+			"args": [
+				"-f",
+				"lifeguard-ai-web\\lifeguard-backend\\pom.xml",
+				"-DskipTests",
+				"package"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run notification-enabled backend test",
+			"type": "shell",
+			"command": "mvn",
+			"args": [
+				"-f",
+				"lifeguard-ai-web\\lifeguard-backend\\pom.xml",
+				"spring-boot:run",
+				"-Dspring-boot.run.arguments=--server.port=8081"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Final frontend notification build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"lifeguard-ai-web\\lifeguard-frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify backend emergency alerts",
+			"type": "shell",
+			"command": "mvn",
+			"args": [
+				"-f",
+				"lifeguard-ai-web\\lifeguard-backend\\pom.xml",
+				"-DskipTests",
+				"package"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build emergency alerts frontend",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"lifeguard-ai-web\\lifeguard-frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build frontend without measurements",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"lifeguard-ai-web\\lifeguard-frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build IoT readings backend",
+			"type": "shell",
+			"command": "mvn",
+			"args": [
+				"-f",
+				"lifeguard-ai-web\\lifeguard-backend\\pom.xml",
+				"-DskipTests",
+				"package"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build IoT readings frontend",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"lifeguard-ai-web\\lifeguard-frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build dashboard sensor limits",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"lifeguard-ai-web\\lifeguard-frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build component status dashboard",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"lifeguard-ai-web\\lifeguard-frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build restored dashboard",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"lifeguard-ai-web\\lifeguard-frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build dashboard component status",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"lifeguard-ai-web\\lifeguard-frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify restored frontend",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"lifeguard-ai-web\\lifeguard-frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Push LifeGuard code to GitHub",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"if not exist .gitignore (echo lifeguard-ai-web\\lifeguard-frontend\\node_modules\\> .gitignore& echo lifeguard-ai-web\\lifeguard-frontend\\dist\\>> .gitignore& echo lifeguard-ai-web\\lifeguard-backend\\target\\>> .gitignore& echo lifeguard-ai-web\\lifeguard-backend\\data\\>> .gitignore) & git init & git remote remove origin 2>nul & git remote add origin https://github.com/yaswanthreddy-rgb/Lifeguard-ai-iot-hazard-detection.git & git add . & git commit -m \"Add emergency response alerts\" -m \"Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>\" & git branch -M main & git push -u origin main"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Initialize LifeGuard Git repository",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"init"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Configure LifeGuard GitHub remote",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"remote",
+				"add",
+				"origin",
+				"https://github.com/yaswanthreddy-rgb/Lifeguard-ai-iot-hazard-detection.git"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Commit LifeGuard emergency alerts",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"-c",
+				"user.name=Copilot",
+				"-c",
+				"user.email=223556219+Copilot@users.noreply.github.com",
+				"add",
+				"."
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
